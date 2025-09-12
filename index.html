@@ -1,0 +1,1045 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Digital Marketing</title>
+    <link rel="stylesheet" href="digital marketing.css" />
+    <!-- AOS CSS -->
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  </head>
+  <style>
+
+    h2, h3, h4 {
+      font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      
+    }
+
+    p, li{
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+
+    /* .hero-content {
+  position: relative;
+  z-index: 1;
+  color: white;
+  text-align: center;
+  padding-top: 120px; pushes down so it’s not hidden behind navbar
+} */
+
+/* .navbar {
+  position: fixed;       make it sticky
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 15px 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1000;         keep it above everything
+  background: rgba(0, 0, 0, 0.6); transparent background
+  backdrop-filter: blur(8px);     nice glass effect
+} */
+
+
+:root {
+  --primary: #234e70;
+  --secondary: #4F959D;
+  --light: #ffffff;
+  --overlay: rgba(0, 0, 0, 0.7);
+}
+
+/* 🎥 Hero Section */
+.hero {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: var(--light);
+  overflow: hidden;
+}
+
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+}
+
+.overlay1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--overlay);
+  z-index: -1;
+}
+
+/* 📌 Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 15px 60px;
+  margin-left: 0px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(6px);
+  z-index: 1000;
+}
+
+.logo img {
+  width: 180px;
+  height: auto;
+  padding-top: 10px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  padding-top: 10px;
+}
+
+.nav-links li a {
+  color: var(--light);
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+  color: var(--secondary);
+}
+
+/* 📝 Hero Content */
+.hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 150px 20px 50px;
+  z-index: 2;
+}
+
+.hero-content h1 {
+  font-size: 4rem;
+  margin-bottom: 20px;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 25px;
+  line-height: 1.6;
+  color: #eaeaea;
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.hero-btn {
+  padding: 12px 28px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.primary {
+  background-color: var(--secondary);
+  color: white;
+}
+
+.primary:hover {
+  background-color: var(--primary);
+}
+
+.secondary {
+  background-color: transparent;
+  border: 1px solid #fff;
+  color: white;
+}
+
+.secondary:hover {
+  background-color: #151515;
+}
+
+/* 📊 Stats Section */
+.stats {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 40px 20px;
+}
+
+.stat-box {
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--primary);
+  padding: 20px 30px;
+  border-radius: 10px;
+  min-width: 180px;
+  text-align: center;
+  transition: 0.3s ease;
+}
+
+.stat-box:hover {
+  background: var(--primary);
+  color: #fff;
+}
+
+.stat-box h2 {
+  font-size: 2rem;
+}
+
+.stat-box p {
+  font-size: 1rem;
+}
+
+/* Base styles */
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 1.8rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+/* 📱 Responsive Design */
+
+/* Laptop & large tablets (≤1025px) */
+@media (max-width: 1025px) {
+  .navbar {
+    padding: 15px 40px;
+  }
+
+  .hero-content h1 {
+    font-size: 3rem;
+  }
+
+  .hero-content p {
+    font-size: 1.1rem;
+  }
+
+  .stats {
+    gap: 15px;
+  }
+}
+
+/* Tablets (≤769px) */
+@media (max-width: 769px) {
+  .navbar {
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+  }
+
+  /* .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  } */
+
+  .hero-content {
+    padding: 120px 20px 40px;
+  }
+
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+
+  .stats {
+    justify-content: center;
+  }
+
+  .stat-box {
+    min-width: 45%;
+  }
+
+  /* @media (max-width: 769px) { */
+  .nav-links {
+    position: fixed;
+    top: 0;
+    left: -250px; /* hidden to the left */
+    height: 100vh;
+    width: 220px;
+    background: #111;
+    flex-direction: column;
+    padding: 60px 20px;
+    gap: 20px;
+    transition: left 0.3s ease-in-out;
+    z-index: 999;
+  }
+
+  .nav-links.show {
+    left: 0; /* slide in */
+  }
+
+  .menu-toggle {
+    display: block;
+    z-index: 1000;
+  }
+
+  .nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover {
+    color: #8cd8bc;
+  }
+}
+/* } */
+
+/* Mobile (≤426px) */
+@media (max-width: 426px) {
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 15px;
+  }
+
+  .logo img {
+    width: 140px;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .hero-content {
+    padding: 100px 15px 30px;
+  }
+
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .hero-content p {
+    font-size: 0.95rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .stat-box {
+    width: 90%;
+  }
+
+  /* Base Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background: #111;
+  color: white;
+}
+
+.navbar .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: white;
+  transition: 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: #65a5d5;
+}
+
+/* Hide button by default */
+.menu-toggle {
+  display: none;
+  font-size: 1.8rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+/* 📲 Mobile (≤ 426px) */
+
+@media (max-width: 426px) {
+  .navbar {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 15px;
+  }
+
+  .logo img {
+    width: 140px;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 15px;
+    background: #111;
+    padding: 15px;
+    border-radius: 8px;
+    gap: 12px;
+    width: 200px;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+    font-size: 1.8rem;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+  }
+}
+
+/* @media (max-width: 426px) {
+  .nav-links {
+    display: none; 
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background: #111;
+    padding: 15px;
+    border-radius: 8px;
+    gap: 15px;
+    width: 200px;
+  }
+
+  .nav-links.show {
+    display: flex; 
+  }
+
+  .menu-toggle {
+    display: block; 
+  }
+} */
+
+}
+
+  </style>
+
+
+
+  <body>
+
+  
+
+
+    <header class="hero" id="hero">
+      <!-- Background Video -->
+      <video autoplay muted loop playsinline class="bg-video">
+        <source src="./3254066-uhd_3840_2160_25fps.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    
+      <!-- Dark Overlay -->
+      <div class="overlay1"></div>
+    
+      <!-- Navbar -->
+           
+      <nav class="navbar">
+        <div class="logo">
+          <img src="white-logo preview.png" alt="logo-image" />
+        </div>
+      
+        <!-- Hamburger Button -->
+        <button class="menu-toggle">☰</button>
+      
+        <!-- Links -->
+        <ul class="nav-links">
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#favorite-plants">Services</a></li>
+          <li><a href="#why-shop">About</a></li>
+          <li><a href="#contact-us">Contact</a></li>
+        </ul>
+      </nav>
+      
+      <!-- <nav class="navbar">
+        <div class="logo">
+          <img src="white-logo preview.png" alt="logo-image" />
+        </div>
+        <ul class="nav-links">
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#favorite-plants">Services</a></li>
+          <li><a href="#why-shop">About</a></li>
+          <li><a href="#contact-us">Contact</a></li>
+        </ul>
+      
+        
+        <button class="menu-toggle">☰</button>
+      </nav> -->
+      
+      <!-- <nav class="navbar">
+        <div class="logo"> 
+          <img src="white-logo preview.png" alt="logo-image" />
+        </div>
+        <ul class="nav-links">
+          <li> <a href="#hero">Home</a> </li>
+          <li> <a href="#favorite-plants">Services</a></li>
+          <li> <a href="#why-shop">About</a></li>
+          <li> <a href="#contact-us">Contact</a></li>
+        </ul>
+        <button style="background: var(--wp-admin-theme-color); color: white; padding: 10px 20px; border: none; border-radius: 5px;"></button>
+      </nav> -->
+    
+      <!-- Hero Content -->
+      <div class="hero-content" id="hero-content">
+        <h1>DIGITAL MARKETING</h1>
+        <p>
+          Digital marketing is the backbone of modern business growth. It
+          leverages online platforms to connect with audiences, boost brand
+          visibility, and drive sales. With the right strategies, businesses can
+          achieve sustainable growth and a competitive edge.
+        </p>
+        <div class="hero-buttons">
+          <button class="hero-btn primary">Login</button>
+          <button class="hero-btn secondary">Learn More</button>
+        </div>
+      </div>
+
+      
+    
+      <!-- Stats Section -->
+      <div class="stats">
+        <div class="stat-box">
+          <h2>1,900+</h2>
+          <p>client’s</p>
+        </div>
+        <div class="stat-box">
+          <h2>8,000+</h2>
+          <p>work's</p>
+        </div>
+        <div class="stat-box">
+          <h2>520+</h2>
+          <p>repeted client’s</p>
+        </div>
+        <div class="stat-box">
+          <h2>4.9★</h2>
+          <p>Top Customer Rating</p>
+        </div>
+      </div>
+    </header>
+    
+    <div class="content5" data-aos="fade-up">
+      <h2>WHO WE ARE</h2>
+      <p>
+        In digital marketing, "who we are" typically refers to the identity,
+        mission, and values of a brand or agency within the online space.
+        Digital marketing is all about promoting products or services through
+        various digital channels, such as search engines, social media, email,
+        websites, and other online platforms.Lorem ipsum dolor sit amet,
+        consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper
+        mattis, pulvinar dapibus leo.
+      </p>
+    </div>
+
+
+    <section class="offer-section" >
+      <div class="offer-text" data-aos="fade-right">
+        <h2 >Logo and Visual Identity</h2>
+        <p>
+          Your logo is the cornerstone of your brand’s identity, visually
+          representing your company’s values and mission with simplicity and
+          memorability. Visual identity encompasses all design elements—colors,
+          typography, imagery, and graphic components—that work together to
+          create a cohesive and professional brand presence.building recognition
+          and trust with your audience.
+        </p>
+        <button class="explore-btn">Explore More</button>
+      </div>
+      <div class="offer-image">
+        <img
+          src="./side-view-man-working-with-computer.jpg"
+          alt="Indoor Plants" data-aos="fade-left"
+        />
+      </div>
+    </section>
+
+    <section class="offer-section2" >
+      <div class="offer-image">
+        <img
+          src="./65e7e5c7c236acc934fbe2d2_user-experience-importance.jpg"
+          alt="Indoor Plants" data-aos="fade-right"
+        />
+      </div>
+      <div class="offer-text" data-aos="fade-left">
+        <h2>Website and User Experience</h2>
+        <p>
+          A website is the digital face of your brand, designed to inform,
+          engage, and convert visitors through clear messaging and seamless
+          functionality. User Experience (UX) focuses on optimizing the user
+          journey, ensuring that interactions are intuitive, efficient, and
+          enjoyable across all devices.
+        </p>
+        <button class="explore-btn">Explore More</button>
+      </div>
+    </section>
+
+    
+
+    <section class="favorite-plants" id="favorite-plants" data-aos="fade-up" >
+      <h2>Our Marketing Services</h2>
+      <p>
+        In addition to core marketing services, Stackly provides website design,
+        content creation, and conversion rate optimization. They focus on
+        building customer engagement and brand loyalty through personalized
+        digital experiences. Stackly’s hands-on approach ensures that every
+        campaign aligns with a client’s business goals. From small startups to
+        large enterprises, they adapt their methods to suit different industries
+        and audiences. With Stackly, businesses gain a reliable partner for
+        long-term digital growth.
+      </p>
+      
+
+      <section class="learning-hub" data-aos="fade-up">
+        <!-- <h2>Learning Hub</h2> -->
+        <div class="hub-grid" data-aos="fade-up">
+          <!-- Card 1 -->
+          <div class="hub-card">
+            <img src="stack5.jpg" alt="Down Payment Assistance" />
+            <div class="card-content">
+              <div class="meta">
+                <span class="tag">Email Marketing</span>
+                <span class="date">April 19, 2024</span>
+              </div>
+              <h3 data-aos="fade-up">Email Marketing</h3>
+              <ul data-aos="fade-up">
+                <li>Campaign Strategy & Audience Segmentation</li>
+                <li>Email Design & Content Creation</li>
+                <li>Automation & Workflow Setup</li>
+                <li>Performance Tracking & Optimization</li>
+                <br />
+                <li style="list-style: none; position: relative">
+                  <span style="position: absolute; left: -1em">★</span> Logo
+                  Design, Promotions &amp; Advertising
+                </li>
+              </ul><br>
+
+              <a href="#">Read More →</a>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="hub-card" >
+            <img src="stack4.jpg" alt="FICO Score" />
+            <div class="card-content">
+              <div class="meta">
+                <span class="tag">PPC</span>
+                <span class="date">April 16, 2024</span>
+              </div>
+              <h3 data-aos="fade-up">Pay-Per-Click (PPC)</h3>
+              <ul data-aos="fade-up">
+                <li>Google Ads (Search, Display, Shopping)</li>
+                <li>Campaign setup & optimization</li>
+                <li>Landing page creation & A/B testing</li>
+                <li>Analytics & ROI tracking</li>
+                <br /><br>
+                <li style="list-style: none; position: relative">
+                  <span style="position: absolute; left: -1em">★</span> Logo
+                  Design, Promotions &amp; Advertising
+                </li>
+              </ul><br>
+              <a href="#">Read More →</a>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="hub-card" >
+            <img src="stack6.jpg" alt="Credit Monitoring Tools" />
+            <div class="card-content">
+              <div class="meta">
+                <span class="tag" style="margin-top: 10px;">SEO</span>
+                <span class="date" style="margin-top: 10px;">April 4, 2024</span>
+              </div>
+              <h3 data-aos="fade-up">Search Engine Optimization (SEO)</h3>
+              <ul data-aos="fade-up">
+                <li>On-page & off-page SEO</li>
+                <li>Keyword research & content strategy</li>
+                <li>Technical SEO audits</li>
+                <li>Local SEO for increased visibility</li>
+                <br /><br>
+                <li style="list-style: none; position: relative">
+                  <span style="position: absolute; left: -1em">★</span> Logo
+                  Design, Promotions &amp; Advertising
+                </li>
+              </ul><br>
+              <a href="#">Read More →</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="learning-hub" data-aos="fade-up">
+        <div class="hub-grid">
+          <!-- Card 1 -->
+          <div class="hub-card" >
+            <img src="stcak1.jpg" alt="Down Payment Assistance" />
+            <div class="card-content">
+              <div class="meta">
+                <span class="tag">SMM</span>
+                <span class="date">April 19, 2024</span>
+              </div>
+              <h3 style="padding-top: 5px;" data-aos="fade-up">Social Media Marketing (SMM)</h3><br><br>
+              <ul style="margin-top: -15px;" data-aos="fade-up">
+                <li>Strategy & content creation</li>
+                <li>Paid ad campaigns (Facebook, Instagram, LinkedIn, X)</li>
+                <li>Community management & growth</li>
+                <li>Influencer collaborations</li>
+                <br />
+                <li style="list-style: none; position: relative">
+                  <span style="position: absolute; left: -1em">★</span> Logo
+                  Design, Promotions &amp; Advertising
+                </li>
+              </ul><br>
+              <a href="#">Read More →</a>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="hub-card" >
+            <img src="stack3.jpg" alt="FICO Score" />
+            <div class="card-content">
+              <div class="meta">
+                <span class="tag">Optimization</span>
+                <span class="date">April 16, 2024</span>
+              </div>
+              <h3 data-aos="fade-up">Analytics & Conversation Rate Optimization</h3>
+              <ul data-aos="fade-up">
+                <li>User behavior tracking (GA4, Hotjar)</li>
+                <li>Funnel analysis & optimization</li>
+                <li>Automation & Workflow Setup</li>
+                <li>Performance Tracking & Optimization</li>
+                <br /><br>
+                <li style="list-style: none; position: relative">
+                  <span style="position: absolute; left: -1em">★</span> Logo
+                  Design, Promotions &amp; Advertising
+                </li>
+              </ul><br>
+              <a href="#">Read More →</a>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="hub-card" >
+            <img src="stack2.jpg" alt="Credit Monitoring Tools" />
+            <div class="card-content">
+              <div class="meta">
+                <span class="tag">GMB</span>
+                <span class="date">April 4, 2024</span>
+              </div>
+              <h3 data-aos="fade-up">Google My Business (GMB)</h3>
+              <!-- <h4>
+                Experienced Professionals: Our team brings years of expertise to
+                ensure quality and satisfaction.
+              </h4> -->
+              <br />
+              <ul data-aos="fade-up">
+                <li>Customer-Centric Approach</li>
+                <li>Affordable Pricing</li>
+                <li>Quick & Reliable Service</li>
+                <li>Locally Trusted</li>
+                <li>Excellent Reviews</li>
+                <br />
+                <li style="list-style: none; position: relative">
+                  <span style="position: absolute; left: -1em">★</span> Logo
+                  Design, Promotions &amp; Advertising
+                </li>
+              </ul><br>
+              <a href="#">Read More →</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+
+   
+
+    <section class="gopro-section">
+      <div class="gopro-image">
+        <img src="ecommerce-3d-illustrations.jpg" alt="GoPro with Skater">
+      </div>
+      <div class="gopro-text" data-aos="fade-left">
+        <h2>Content Marketing Strategy</h2><br>
+        <p>A Content Marketing Strategy focuses on creating and distributing
+          valuable, relevant content to attract, engage, and convert a target
+          audience. It involves setting clear goals, understanding your
+          audience, and leveraging various channels to drive brand awareness and
+          business growth.</p>
+      </div>
+    </section>
+    
+    <section class="why-shop" id="why-shop" data-aos="fade-up">
+      <h2>Why Choose Us ?</h2>
+      <p class="subheading" data-aos="fade-up">
+        When you choose me for your digital marketing needs, you’re choosing a
+        dedicated partner who’s focused on delivering results. I take the time
+        to understand your business, your audience, and your goals to create
+        customized strategies that drive real engagement and conversions.
+        Whether it’s SEO, social media, content marketing, or paid ads, I blend
+        creativity with data to make sure every campaign moves the needle.
+      </p>
+    
+
+    <section class="services" data-aos="fade-up">
+      <div class="service-box" >
+        <div class="icon">
+          <img src="target.png" alt="Building Icon">
+        </div>
+        <h3>Strategy</h3>
+        <p>Strategy is a plan to promote a brand using online platforms.</p>
+      </div>
+  
+      <div class="service-box" >
+        <div class="icon">
+          <img src="https://cdn-icons-png.flaticon.com/512/1076/1076887.png" alt="Shop Icon">
+        </div>
+        <h3>Keyword</h3>
+        <p>Keywords are specific words or phrases people use to search for
+          information online.</p>
+      </div>
+  
+      <div class="service-box" >
+        <div class="icon">
+          <img src="https://cdn-icons-png.flaticon.com/512/3239/3239952.png" alt="AI Icon">
+        </div>
+        <h3>Audience</h3>
+        <p>The group of people a business aims to reach with its marketing
+          efforts.</p>
+      </div>
+  
+      <div class="service-box" >
+        <div class="icon">
+          <img src="telephone.png" alt="Lightbulb Icon">
+        </div>
+        <h3>24/7 Customer Support</h3>
+        <p>We’re here whenever you need us, 24/7.</p>
+      </div>
+    </section>
+    
+  </section>
+
+    
+    <section class="newsletter" data-aos="fade-up">
+      <h1>Connect Us in Your Inbox</h1>
+      <form>
+        <input type="email" placeholder="Enter your email" />
+        <button type="submit">Subscribe</button>
+      </form>
+    </section>
+
+    
+
+
+          <section class="contact-section" id="contact-us" >
+            <div class="contact-wrapper" data-aos="fade-right">
+              <div class="contact-left">
+                <h1>GET IN TOUCH</h1>
+                <p>
+                  “Get in touch with Stackly for cutting–edge website solutions
+                  designed to elevate your brand. Our team creates impactful,
+                  user–centric websites that drive success.”
+                </p>
+                <form class="contact-form">
+                  <input type="email" placeholder="Email" required />
+                  <button type="submit">Let’s Talk</button>
+                </form>
+              </div>
+      
+              <div class="contact-right" data-aos="fade-left">
+                <h2>Contact info</h2>
+                <div class="info-block">
+                  <p>
+                    <strong>📍 Our location:</strong><br />MMR COMPLEX, SALEM, Tamil
+                    Nadu 636007.
+                  </p>
+                </div>
+                <div class="info-block">
+                  <p><strong>📞 Phones:</strong><br />6379566077</p>
+                </div>
+                <div class="info-block">
+                  <p>
+                    <strong>📧 Email:</strong><br /><a
+                      href="mailto:info@thestackly.com"
+                      >info@thestackly.com</a
+                    >
+                  </p>
+                </div>
+                <div class="info-block">
+                  <p>
+                    <strong>🌐 Website:</strong><br /><a
+                      href="https://www.thestackly.com"
+                      target="_blank"
+                      >www.thestackly.com</a
+                    >
+                  </p>
+                </div>
+                <div class="social-icons">
+                  <a href="#"><img src="facebook.png" alt=""><i class="fa-brands fa-facebook"></i></a>
+                  <a href="#"><img src="linkedin (1).png" alt=""><i class="fa-brands fa-linkedin"></i></a>
+                  <a href="#"><img src="instagram (1).png" alt=""><i class="fa-brands fa-instagram"></i></a>
+                  <a href="#"><img src="twitter (1).png" alt=""><i class="fa-brands fa-x"></i></a>
+                </div>
+              </div>
+            </div>
+      
+            <footer class="footer">
+              <div class="footer-content">
+                <img src="white-logo preview.png" alt="Stackly Logo" class="logo" data-aos="fade-right"/>
+                <p>© 2025 Copyright Stackly. All Rights Reserved.</p>
+              </div>
+            </footer>
+          </section>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
+
+
+<!-- <script> src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"</script>
+
+<script>
+  var typed = new Typed(".auto-type", {
+    string: ["Marketing"],
+    typespeed: 150,
+    backspeed: 150,
+    loop: true
+  })
+
+</script> -->
+
+<script>
+  const menuToggle = document.querySelector('.menu-toggle');
+  const navLinks = document.querySelector('.nav-links');
+
+  menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('show');
+  });
+</script>
+
+
+
+<script>
+  window.addEventListener("load", () => {
+    document.querySelectorAll("img").forEach(img => {
+      img.classList.add("loaded");
+    });
+  });
+</script>
+
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          entry.target.classList.add('active');
+        }, 3000); // ⏳ 3s delay
+        observer.unobserve(entry.target); // run once
+      }
+    });
+  }, { threshold: 0.2 }); // element is 20% visible
+
+  reveals.forEach(el => observer.observe(el));
+</script>
+
+
+<!-- <script>
+  // Select all elements you want to animate
+  const reveals = document.querySelectorAll('.reveal');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('active');
+        observer.unobserve(entry.target); // animation runs only once
+      }
+    });
+  }, { threshold: 0.2 }); // 20% visible
+
+  reveals.forEach(el => observer.observe(el));
+</script> -->
+
+
+ 
+
+  <!-- <script>
+    const menuToggle = document.querySelector(".menu-toggle");
+const navLinks = document.querySelector(".nav-links");
+
+menuToggle.addEventListener("click", () => {
+  navLinks.classList.toggle("show");
+}); -->
+
+
+
+    const navbar = document.querySelector('.navbar');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+
+    
+  </script>
+  
+    <!-- AOS JS -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 2000,  /* animation duration (ms) */
+    offset: 100,     /* trigger point */
+    once: true       /* only animate once */
+  });
+</script>
+
+
+  
