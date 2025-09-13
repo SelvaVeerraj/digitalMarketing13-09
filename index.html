@@ -165,7 +165,7 @@
 
 .primary:hover {
   background-color: var(--primary);
-  overflow: hidden;
+  
 }
 
 .secondary {
@@ -176,7 +176,7 @@
 
 .secondary:hover {
   background-color: #151515;
-  overflow:hidden;
+  
 }
 
 /* 📊 Stats Section */
@@ -386,23 +386,31 @@
   }
 
   .hero-content h1 {
+    width: 100%;
     font-size: 2rem;
   }
 
   .hero-content p {
+    width: 100%;
     font-size: 0.95rem;
   }
 
   .hero-buttons {
     flex-direction: column;
-    gap: 10px;
+    
   }
+
+  .primary {
+  background-color: var(--secondary);
+  color: white;
+  margin-left: 5px;
+}
 
   .stats{
     height: 250px;
     padding: 50px;
     margin-top: -80px;
-    margin-left: 20px;
+    margin-left: 10px;
     gap: 30px;
   }
 
@@ -412,7 +420,7 @@
     align-items: center;
     width: 120px;
     height: 60px;
-    
+    gap: 10px;
   }
 
   .stat-box h2 {
