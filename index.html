@@ -160,10 +160,12 @@
 .primary {
   background-color: var(--secondary);
   color: white;
+  
 }
 
 .primary:hover {
   background-color: var(--primary);
+  overflow: hidden;
 }
 
 .secondary {
@@ -174,6 +176,7 @@
 
 .secondary:hover {
   background-color: #151515;
+  overflow:hidden;
 }
 
 /* 📊 Stats Section */
@@ -309,6 +312,51 @@
     transition: color 0.2s;
   }
 
+  .primary {
+  background-color: var(--secondary);
+  color: white;
+  margin-left: -20px;
+}
+
+
+  .hero-content {
+    padding: 120px 20px 40px;
+  }
+
+  .hero-content h1 {
+    font-size: 2.5rem;
+    margin-right: 60px;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+    margin-right: 60px;
+  }
+
+  .stats{
+    height: 250px;
+    padding: 50px;
+    margin-top: -50px;
+    margin-left: 100px;
+  }
+
+  .stat-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 60px;
+    
+  }
+
+  .stat-box h2 {
+  font-size: 15px;
+}
+
+.stat-box p {
+  font-size: 10px;
+}
+
   .nav-links a:hover {
     color: #8cd8bc;
   }
@@ -353,15 +401,16 @@
   .stats{
     height: 250px;
     padding: 50px;
-    margin-top: -50px;
-    margin-left: 0px;
+    margin-top: -80px;
+    margin-left: 20px;
+    gap: 30px;
   }
 
   .stat-box {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 110px;
+    width: 120px;
     height: 60px;
     
   }
